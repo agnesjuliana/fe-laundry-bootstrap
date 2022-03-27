@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+.cp-main {
+  background-color: #90caf9;
+  /* background-color: #5d99c6; */
+  color: #fafafa
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cp-light {
+  background-color: #c3fdff;
+  color: #000000
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cp-dark {
+  background-color: #5d99c6;
+  color: #fafafa
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cp-soft {
+  background-color: #e3f2fd;
+  color: #000000
+}
+
+.cs-main {
+  background-color: #ffab91;
+  color: #fafafa
+}
+
+.cs-light {
+  background-color: #ffddc1;
+  color: #c97b63
+}
+
+.cs-dark {
+  background-color: #c97b63;
+  color: #fafafa
+}
+
+.card {
+  border-radius: 18px;
+  border: none;
+}
+
+.card .dashboard {
+  height: 10vh;
+}
+
+.card .table {
+  padding: 15px;
+  margin: 15px;
+  /* width: 100%; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; */
 }
 
-.App-link {
-  color: #61dafb;
+.card .card-header {
+  border-radius: 18px 18px 0 0 ;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-body {
+  border-radius: 0 0 18px 18px;
+  margin: 0;
 }
+
+.table {
+  margin: 0;
+  width: 97.5%;
+}
+
+.card .shadow {
+box-shadow: 8px 8px 47px -7px rgba(36,36,36,1);
+-webkit-box-shadow: 8px 8px 47px -7px rgba(36,36,36,1);
+-moz-box-shadow: 8px 8px 47px -7px rgba(36,36,36,1);
+}
+
+.label-card-left {
+  border-right: solid white 2px;
+}
+
+.btn {
+	border-radius:15px;
+  min-width: 60px;
+}
+
+.mine {
+	background-color:#ffab91;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	text-decoration:none;
+  height: 40px;
+}
+.mine:hover {
+	background-color:#c97b63;
+}
+.mine:active {
+	position:relative;
+	top:1px;
+}
+
+.modal-content {
+  border-radius: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-header {
+  border-radius: 18px 18px 0 0 ;
+  margin: 0;
+}
+
+.modal-body {
+  border-radius: 0 0 18px 18px;
+  margin: 0;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: none;
+}
+
+/* .container {
+  height: 100vh;
+} */
