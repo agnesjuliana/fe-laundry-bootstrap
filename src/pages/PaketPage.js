@@ -16,7 +16,14 @@ export default class PaketPage extends Component {
       action: ""
     }
     if (!localStorage.getItem("token")) {
-      window.location.href = "/login"
+      window.location.href = "/denied"
+    } else {
+      const userRaw = localStorage.getItem('user')
+      const role = JSON.parse(userRaw).role.toLowerCase()
+
+      if (role !== 'admin') {
+        window.location.href = "/denied"
+      }
     }
   }
   getData() {

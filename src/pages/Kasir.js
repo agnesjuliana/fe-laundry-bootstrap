@@ -21,8 +21,16 @@ export default class Kasir extends Component {
       jenis_paket: "",
       harga: 0
     }
+    
     if (!localStorage.getItem("token")) {
-      window.location.href = "/Login"
+      window.location.href = "/denied"
+    } else {
+      const userRaw = localStorage.getItem('user')
+      const role = JSON.parse(userRaw).role.toLowerCase()
+
+      if (role !== 'admin' && role !== 'kasir') {
+        window.location.href = "/denied"
+      }
     }
   }
   getMember() {

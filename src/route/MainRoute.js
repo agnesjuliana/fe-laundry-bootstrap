@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import DashboardPage from '../pages/DashboardPage'
+import DenniedPage from '../pages/DenniedPage'
 import Kasir from '../pages/Kasir'
 import MemberPage from '../pages/MemberPage'
 import PaketPage from '../pages/PaketPage'
@@ -16,6 +17,7 @@ export default function MainRoute() {
       <Route path="/transaksi" element={<TransaksiPage />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="/kasir" element={<Kasir />} />
+      <Route path="/denied" element={<DenniedPage />} />
     </Routes>
   )
 }

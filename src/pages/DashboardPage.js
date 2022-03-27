@@ -14,7 +14,7 @@ export default class DashboardPage extends Component {
       income: 0,
     }
     if (!localStorage.getItem("token")) {
-      window.location.href = "/"
+      window.location.href = "/denied"
     }
   }
 

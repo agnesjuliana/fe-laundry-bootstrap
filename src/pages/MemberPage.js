@@ -18,7 +18,14 @@ export default class MemberPage extends Component {
     }
 
     if (!localStorage.getItem("token")) {
-      window.location.href = "/login"
+      window.location.href = "/denied"
+    } else {
+      const userRaw = localStorage.getItem('user')
+      const role = JSON.parse(userRaw).role.toLowerCase()
+
+      if (role !== 'admin' && role !== 'kasir') {
+        window.location.href = "/denied"
+      }
     }
   }
   getData() {
@@ -181,8 +188,8 @@ export default class MemberPage extends Component {
                   <div className="form-group">
                     <label>Jenis Kelamin</label>
                     <select className="form-control mb-2" value={this.state.jenis_kelamin} onChange={ev => this.setState({ jenis_kelamin: ev.target.value })}>
-                      <option value="pria">Pria</option>
-                      <option value="wanita">Wanita</option>
+                      <option value="Pria">Pria</option>
+                      <option value="Wanita">Wanita</option>
                     </select>
                   </div>
                   <div className="d-grid gap-2 d-md-flex justify-content-md-end mt-5">

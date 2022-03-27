@@ -10,9 +10,11 @@ export default class TransaksiPage extends Component {
       transaksi: [],
       visible: true,
     }
+
     if (!localStorage.getItem("token")) {
-      window.location.href = "/login"
+      window.location.href = "/denied"
     }
+
   }
 
   getData() {

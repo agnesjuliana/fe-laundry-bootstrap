@@ -18,6 +18,17 @@ export default class UserPage extends Component {
       visible: true,
       fillPassword: ""
     }
+
+    if (!localStorage.getItem("token")) {
+        window.location.href = "/denied"
+    }else {
+      const userRaw = localStorage.getItem('user')
+      const role = JSON.parse(userRaw).role.toLowerCase()
+
+      if(role !== 'admin'){
+        window.location.href = "/denied"
+      }
+    }
   }
 
   tambahData() {
@@ -50,7 +61,7 @@ export default class UserPage extends Component {
       action: "ubah",
       id_user: this.state.users[index].id_user,
       nama: this.state.users[index].nama,
-      password: this.state.users[index].password,
+      password: '',
       username: this.state.users[index].username,
       role: this.state.users[index].role,
       fillPassword: false
@@ -199,7 +210,7 @@ export default class UserPage extends Component {
         <div className="main-content">
           <div className='d-flex justify-content-between align-items-center mb-3'>
             <h3 className="text-black pt-4">Data User</h3>
-            <button class="btn mine" type="button" onClick={() => this.tambahData()}>Tambah User</button>
+            <button className="btn mine" type="button" onClick={() => this.tambahData()}>Tambah User</button>
           </div>
 
           {/* tabel start */}
